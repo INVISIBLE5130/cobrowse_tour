@@ -133,15 +133,13 @@ function backScreen() {
 
             document.querySelector('.tour_window-title').innerHTML = 'Pencil'
             document.querySelector('.tour_window-description').innerHTML = 'Clicking on this button you could draw' +
-                ' anything over the screen.'
+                ' anything over the screen or if you use tool on mobile device you could touch and hold your screen to activate it.'
             document.querySelector('.user-option-list').children[1].style.zIndex = 'unset'
             document.querySelector('.user-option-list').children[1].style.backgroundColor = 'unset'
             document.querySelector('.user-option-list').children[2].style.zIndex = '1001'
             document.querySelector('.user-option-list').children[2].style.backgroundColor = 'white'
             document.querySelector('.user-option-list').children[3].style.zIndex = 'unset'
             document.querySelector('.user-option-list').children[3].style.backgroundColor = 'unset'
-
-            document.querySelector('.next').style.display = 'unset'
             break;
         case 10:
             document.querySelector('.user-option-slide').style.position = 'absolute'
@@ -155,6 +153,23 @@ function backScreen() {
             document.querySelector('.user-option-list').children[2].style.backgroundColor = 'unset'
             document.querySelector('.user-option-list').children[3].style.zIndex = '1001'
             document.querySelector('.user-option-list').children[3].style.backgroundColor = 'white'
+            document.querySelector('.user-option-list').children[4].style.zIndex = 'unset'
+            document.querySelector('.user-option-list').children[4].style.backgroundColor = 'unset'
+
+            document.querySelector('.next').style.display = 'unset'
+            break;
+        case 11:
+            document.querySelector('.user-option-slide').style.position = 'absolute'
+            document.querySelector('.user-option-slide').style.bottom = 'unset'
+            document.querySelector('.user-option-slide').style.zIndex = 'unset'
+
+            document.querySelector('.tour_window-title').innerHTML = 'File'
+            document.querySelector('.tour_window-description').innerHTML = 'Clicking on this button you could ' +
+                ' drag & drop your files to the presentation and show it.'
+            document.querySelector('.user-option-list').children[3].style.zIndex = 'unset'
+            document.querySelector('.user-option-list').children[3].style.backgroundColor = 'unset'
+            document.querySelector('.user-option-list').children[4].style.zIndex = '1001'
+            document.querySelector('.user-option-list').children[4].style.backgroundColor = 'white'
             break;
     }
 }
@@ -255,7 +270,7 @@ function nextScreen() {
 
             document.querySelector('.tour_window-title').innerHTML = 'Pencil'
             document.querySelector('.tour_window-description').innerHTML = 'Clicking on this button you could draw' +
-                ' anything over the screen.'
+                ' anything over the screen or if you use tool on mobile device you could touch and hold your screen to activate it.'
             document.querySelector('.user-option-list').children[1].style.zIndex = 'unset'
             document.querySelector('.user-option-list').children[1].style.backgroundColor = 'unset'
             document.querySelector('.user-option-list').children[2].style.zIndex = '1001'
@@ -273,6 +288,19 @@ function nextScreen() {
             document.querySelector('.user-option-list').children[2].style.backgroundColor = 'unset'
             document.querySelector('.user-option-list').children[3].style.zIndex = '1001'
             document.querySelector('.user-option-list').children[3].style.backgroundColor = 'white'
+            break;
+        case 11:
+            document.querySelector('.user-option-slide').style.position = 'absolute'
+            document.querySelector('.user-option-slide').style.bottom = 'unset'
+            document.querySelector('.user-option-slide').style.zIndex = 'unset'
+
+            document.querySelector('.tour_window-title').innerHTML = 'File'
+            document.querySelector('.tour_window-description').innerHTML = 'Clicking on this button you could ' +
+                ' drag & drop your files to the presentation and show it.'
+            document.querySelector('.user-option-list').children[3].style.zIndex = 'unset'
+            document.querySelector('.user-option-list').children[3].style.backgroundColor = 'unset'
+            document.querySelector('.user-option-list').children[4].style.zIndex = '1001'
+            document.querySelector('.user-option-list').children[4].style.backgroundColor = 'white'
 
             document.querySelector('.next').style.display = 'none'
             break;
