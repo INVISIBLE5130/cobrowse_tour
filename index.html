@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en" style="margin:0; height:100%; overflow: hidden">
+<head>
+
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-159446511-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-159446511-1');
+	</script>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Loading...</title>
+	<link media="all" rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+	<script type="text/javascript" src="js/tour.js"></script>
+</head>
+<body style="margin:0; height:100%; overflow: hidden">
+	<div class="tour_hide">
+		<div class="tour_window">
+			<h2 class="tour_window-title">
+				Tour
+			</h2>
+			<p class="tour_window-description">
+				This is tour was created to show you how to work with our tool. <br> If you want to start click "Next" else click "Finish".
+			</p>
+			<div class="tour_window-buttons">
+				<button class="tour_window-buttons_button back" onclick="backScreen()">
+					Back
+				</button>
+				<button class="tour_window-buttons_button next" onclick="nextScreen()">
+					Next
+				</button>
+				<button class="tour_window-buttons_button finish" onclick="finishTour()">
+					Finish
+				</button>
+			</div>
+		</div>
+	</div>
+	<div id="wrapper" >
+		<div class="user-wrapper">
+			<header class="user-header">
+				<div class="logo-holder">
+					<strong class="logo"><a href="/"><img src="/images/logo.svg" alt="cobrowsing.net"></a></strong>
+				</div>
+				<div class="menu-drop">
+					<ul class="menu">
+						<li>
+							<a href="#" class="chat-opener" onclick="document.getElementById('chatmessage').focus()"><span class="icon-img"><i class="icon-chat"></i> </span><span class="text">Chat</span></a>
+							<div class="chat-slide" id="chatDiv">
+								<div class="chat-info-holder">
+									<div class="wrap">
+										<form onsubmit="chatRoom(document.getElementById('chatmessage').value); document.getElementById('chatmessage').value=''; return false;">
+										<ul class="chat-list" id="chatlist">
+										</ul>
+										<div class="url-field">
+											<input type="text" placeholder="Type your text here" id="chatmessage" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false">
+											<button type="submit">Send</button>
+										</div>
+										</form>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<a href="#" class="user-opener"><span class="icon-img"><i class="icon-user"></i></span><span class="text"> Users </span> <span class="no" id="usercount">1</span><i class="icon-down"></i>
+							</a>
+							<div class="user-slide">
+								<div class="user-info-holder">
+									<div class="wrap">
+										<div class="head">
+											<strong class="drop-title">Users ( <span class="no" id="usercount2">1</span>)</strong>
+
+											<span class="btn-wrap" id="bConference">
+												<a href="javascript:conference()" class="btn" id="conferenceButton">Create conference</a>
+											</span>
+
+
+											<span class="btn-wrap">
+												<a href="javascript:calltoall()" class="btn" id="conferenceButton">Create broadcast</a>
+											</span>
+
+
+										</div>
+										<ul class="user-list">
+											<li><a href="#">You <i class="icon"></i></a></li>
+											<span id="userslist">
+											</span>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<a class="lightbox" href="#popup2" id="popupopen"><span class="icon-img"><i class="icon-setting"></i> </span><span class="text">Settings</span> <i class="icon-down"></i></a>
+						</li>
+						<li>
+							<a href="#" class="share-opener color-text"><span class="icon-img"><i class="icon-share"></i> </span><span class="text"><b>Share link</b></span> <i class="icon-down"></i></a>
+							<div class="share-slide">
+								<div class="share-info-holder">
+									<div class="wrap">
+										<div class="head">
+											<strong class="drop-title">share link</strong>
+										</div>
+										<div class="share-field">
+											<input type="text" readonly id="sharelink">
+											<button type="submit" onclick="document.getElementById('sharelink').select();  document.execCommand('copy'); $('.share-opener').click()">Copy URL</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="url">
+							<a href="#" class="url-opener"><i class="icon-url"></i></a>
+							<div class="url-slide">
+								<div class="url-info-holder">
+									<div class="wrap">
+										<div class="head">
+											<strong class="drop-title">Type new URL</strong>
+										</div>
+										<form onsubmit="goTo(document.getElementById('newurl').value); document.getElementById('newurl').value=''; return false;">
+										<div class="url-area">
+											<div class="url-field">
+										
+												<input type="text" id="newurl" placeholder="Type new URL" autocomplete="false" spellcheck="false" oninput="typenewurl(document.getElementById('newurl').value)">
+												<button type="submit" >GO</button>
+						
+											</div>
+										</div>
+										</form>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<span class="menu-icon">
+					<a href="#" class="user-option-opener"><i class="icon-quesion"></i></a>
+				</span>
+				<div class="user-option-slide">
+					<div class="user-option-holder">
+						<ul class="user-option-list">
+							<li><a href="javascript:scale(1)"><i title="Zoom In" class="icon-searchplus"></i></a></li> 
+							<li><a href="javascript:scale(-1)"><i title="Zoom Out" class="icon-searchminus"></i></a></li> 
+							<li class="active" id="paintLi"><a href="javascript:paint()"><i title="Paint" class="icon-pencil"></i></a></li> 
+							<li id="dragLi"><a href="javascript:drag()"><i title="Drag`n`Drop" class="icon-hand"></i></a></li> 
+						</ul>
+					</div>
+				</div>
+				<strong class="mob-logo">
+					<a href="#" class="menu-opener">
+						<img src="/images/mob-logo.svg" alt="cobrowsing">
+					</a>
+				</strong>
+			</header>
+			<center>
+				<iframe id="mainFrame"  frameborder="0" src="" scrolling="yes" style="overflow:visible; border: 0px grey dashed;" sandbox="allow-top-navigation allow-popups allow-modals allow-scripts allow-same-origin allow-forms allow-presentation"></iframe>
+			</center>
+		</div>
+		<div class="popup-holder">
+			<div id="popup2" class="lightbox-demo">
+				<form onsubmit="nickname(document.getElementById('username').value); return false;" id="nick">
+					<h2>Username</h2>
+					<div class="field-holder"> 
+						<input class="search-field" type="search" id="username" name="Search" placeholder="">
+						<input type="submit" value="Apply" class="btn-blue">
+					</div><br><br>
+					<h2>Audio Device</h2>
+					<div class="field-holder"> 
+						<select id="audioinput"></select>
+					</div><br><br>
+					<h2>Device simulation</h2>
+					<div class="field-holder"> 
+						<input type="button" class="btn-blue" onclick="changevp(true)" value="Mobile">&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="button" class="btn-blue" onclick="changevp(false)" value="Desktop">
+					</div>
+
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<div class="cookieinfo" id="cookieinfo2" style="display:none; position: fixed; left: 0px; right: 0px; height: auto; min-height: 21px; z-index: 2147483646; background: rgb(100, 88, 98) none repeat scroll 0% 0%; color: rgb(255, 255, 255); line-height: 21px; padding: 8px 18px; font-family: verdana, arial, sans-serif; font-size: 14px; text-align: left; bottom: 0px; opacity: 1;"><div class="cookieinfo-close" style="float: right; display: block; padding: 5px 8px; min-width: 100px; margin-left: 5px; border-radius: 5px; cursor: pointer; color: rgb(0, 0, 0); background: rgb(241, 214, 0) none repeat scroll 0% 0%; text-align: center;" onclick="localStorage.setItem('info',1); document.getElementById('cookieinfo2').style.display='none';">Got it!</div><span style="display:block;padding:5px 0 5px 0;">Hint: New function is available! You can drag and drop any image or pdf from your device to co-browsing window. Enjoy working on the same image or pdf.</span></div>
+
+	<div class="cookieinfo" id="cookieinfo" style="display:none; position: fixed; left: 0px; right: 0px; height: auto; min-height: 21px; z-index: 2147483647; background: rgb(100, 88, 98) none repeat scroll 0% 0%; color: rgb(255, 255, 255); line-height: 21px; padding: 8px 18px; font-family: verdana, arial, sans-serif; font-size: 14px; text-align: left; bottom: 0px; opacity: 1;"><div class="cookieinfo-close" style="float: right; display: block; padding: 5px 8px; min-width: 100px; margin-left: 5px; border-radius: 5px; cursor: pointer; color: rgb(0, 0, 0); background: rgb(241, 214, 0) none repeat scroll 0% 0%; text-align: center;" onclick="document.getElementById('cookieinfo').style.display='none';">Got it!</div><span style="display:block;padding:5px 0 5px 0;">Only Safari browser is compatible with voice chat.</span></div>
+
+	<script>
+		let ua = window.navigator.userAgent;
+		let iOS = !!ua.match(/iPad/i) || !!ua.match(/iPhone/i);
+		if (iOS && (ua.match(/CirOS/i) ||  ua.match(/FxiOS/i))) 
+			document.getElementById('cookieinfo').style.display='block';
+
+		if (!localStorage.getItem('info'))
+			document.getElementById('cookieinfo2').style.display='block';
+
+	</script>
+
+
+	<script src="/js/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="/js/main.js?ts=1601882104"></script>	
+	<script src="/js/jquery.main.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="/js/lazysizes.min.js"></script>
+
+</body>
+</html>
