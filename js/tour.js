@@ -2,7 +2,12 @@ window.addEventListener("load", () => {
     if (localStorage.getItem('tour') === 'finished') {
         return null
     } else {
-        document.querySelector('.tour_hide').classList.add('tour_show')
+        if (window.innerWidth < 1023) {
+            document.querySelector("body").classList.add('menu-active')
+            document.querySelector('.tour_hide').classList.add('tour_show')
+        } else {
+            document.querySelector('.tour_hide').classList.add('tour_show')
+        }
     }
 })
 
@@ -11,6 +16,8 @@ function finishTour() {
     document.querySelector('.user-option-slide').style.position = 'fixed'
     document.querySelector('.user-option-slide').style.bottom = '0'
     document.querySelector('.user-option-slide').style.zIndex = '90'
+    document.querySelector('.user-header').style.position = 'fixed'
+    document.querySelector('.user-header').style.zIndex = '90'
     localStorage.setItem('tour', 'finished')
 }
 
@@ -62,6 +69,10 @@ function backScreen() {
             document.querySelector('.menu').children[3].style.backgroundColor = 'white'
             document.querySelector('.menu').children[4].style.zIndex = 'unset'
             document.querySelector('.menu').children[4].style.backgroundColor = 'unset'
+
+            if (window.innerWidth < 1023) {
+                document.querySelector('.next').style.display = 'unset'
+            }
             break;
         case 5:
             document.querySelector('.tour_window-title').innerHTML = 'New URL'
@@ -69,8 +80,6 @@ function backScreen() {
                 ' a new url and change the presentation web page.'
             document.querySelector('.menu').children[3].style.zIndex = 'unset'
             document.querySelector('.menu').children[3].style.backgroundColor = 'unset'
-            document.querySelector('.menu').children[4].style.zIndex = '1001'
-            document.querySelector('.menu').children[4].style.backgroundColor = 'white'
             document.querySelector('.menu').children[4].style.zIndex = '1001'
             document.querySelector('.menu').children[4].style.backgroundColor = 'white'
             document.querySelector('.menu-icon').style.zIndex = 'unset'
@@ -155,6 +164,9 @@ function nextScreen() {
 
     switch (screen) {
         case 1:
+            if (window.innerWidth < 1023)
+            document.querySelector('.user-header').style.position = 'absolute'
+            document.querySelector('.user-header').style.zIndex = 'unset'
             document.querySelector('.tour_window-title').innerHTML = 'Chat'
             document.querySelector('.tour_window-description').innerHTML = 'Clicking on this button you could open ' +
                 ' the chat and texting with other participants of this session.'
@@ -197,6 +209,9 @@ function nextScreen() {
             document.querySelector('.menu').children[3].style.backgroundColor = 'unset'
             document.querySelector('.menu').children[4].style.zIndex = '1001'
             document.querySelector('.menu').children[4].style.backgroundColor = 'white'
+            if (window.innerWidth < '1023') {
+                document.querySelector('.next').style.display = 'none'
+            }
             break;
         case 6:
             document.querySelector('.tour_window-title').innerHTML = 'Tour button'

@@ -2743,7 +2743,7 @@ body > .jcf-select-drop.jcf-drop-flipped {
 	width: 100%;
 	height: 100vh;
 	display: none;
-	position: absolute;
+	position: fixed;
 	align-items: center;
 	justify-content: center;
 	background: rgba(0, 0, 0, 0.5);
@@ -2763,6 +2763,12 @@ body > .jcf-select-drop.jcf-drop-flipped {
 	flex-direction: column;
 	justify-content: space-between;
 	box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.25);
+}
+
+@media screen and (max-width: 1023px) {
+	.tour_window {
+		width: 90%;
+	}
 }
 
 .tour_window-title {
