@@ -2767,6 +2767,7 @@ body > .jcf-select-drop.jcf-drop-flipped {
 @media screen and (max-width: 1023px) {
 	.tour_window {
 		width: 90%;
+		height: auto;
 	}
 }
 
