@@ -1,6 +1,6 @@
 window.addEventListener("load", () => {
     if (localStorage.getItem('tour') === 'finished') {
-        return null
+        document.querySelector('.tour_hide').classList.remove('tour_show')
     } else {
         if (window.innerWidth < 1023) {
             document.querySelector("body").classList.add('menu-active')
@@ -25,7 +25,16 @@ function finishTour() {
     document.querySelector('.user-option-slide').style.position = 'fixed'
     document.querySelector('.user-option-slide').style.bottom = '0'
     document.querySelector('.user-option-slide').style.zIndex = '90'
-    document.querySelector('.user-header').style.position = 'relative'
+    document.querySelector('.menu').children[0].style.backgroundColor = 'unset'
+    document.querySelector('.menu').children[1].style.backgroundColor = 'unset'
+    document.querySelector('.menu').children[2].style.backgroundColor = 'unset'
+    document.querySelector('.menu').children[3].style.backgroundColor = 'unset'
+    document.querySelector('.menu').children[4].style.backgroundColor = 'unset'
+    if (window.innerWidth < 1023) {
+        document.querySelector('.user-header').style.position = 'fixed'
+    } else {
+        document.querySelector('.user-header').style.position = 'relative'
+    }
     localStorage.setItem('tour', 'finished')
 }
 
