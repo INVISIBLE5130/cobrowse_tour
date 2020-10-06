@@ -11,13 +11,21 @@ window.addEventListener("load", () => {
     }
 })
 
+function startTour() {
+    if (window.innerWidth < 1023) {
+        document.querySelector("body").classList.add('menu-active')
+        document.querySelector('.tour_hide').classList.add('tour_show')
+    } else {
+        document.querySelector('.tour_hide').classList.add('tour_show')
+    }
+}
+
 function finishTour() {
     document.querySelector('.tour_hide').classList.remove('tour_show')
     document.querySelector('.user-option-slide').style.position = 'fixed'
     document.querySelector('.user-option-slide').style.bottom = '0'
     document.querySelector('.user-option-slide').style.zIndex = '90'
-    document.querySelector('.user-header').style.position = 'fixed'
-    document.querySelector('.user-header').style.zIndex = '90'
+    document.querySelector('.user-header').style.position = 'relative'
     localStorage.setItem('tour', 'finished')
 }
 

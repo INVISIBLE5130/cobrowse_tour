@@ -643,10 +643,6 @@ input[type="submit"] {
   content: "\e902";
 }
 
-.icon-attachment:before {
-  content: "\e9cd";
-}
-
 .icon-pencil:before {
   content: "\e903";
 }
@@ -730,7 +726,6 @@ input[type="submit"] {
 .icon-url:before {
   content: "\e917";
 }
-
 
 html {
 	box-sizing: border-box;

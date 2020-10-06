@@ -15,7 +15,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Loading...</title>
 	<link media="all" rel="stylesheet" href="css/main.css">
-	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">	
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<link href="fonts/css/all.css" rel="stylesheet">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
 	<script type="text/javascript" src="js/tour.js"></script>
 </head>
@@ -139,7 +140,7 @@
 					</ul>
 				</div>
 				<span class="menu-icon">
-					<a href="#" class="user-option-opener"><i class="icon-quesion"></i></a>
+					<a href="javascript:startTour()" class="user-option-opener"><i class="icon-quesion"></i></a>
 				</span>
 				<div class="user-option-slide">
 					<div class="user-option-holder">
@@ -148,7 +149,7 @@
 							<li><a href="javascript:scale(-1)"><i title="Zoom Out" class="icon-searchminus"></i></a></li> 
 							<li class="active" id="paintLi"><a href="javascript:paint()"><i title="Paint" class="icon-pencil"></i></a></li> 
 							<li id="dragLi"><a href="javascript:drag()"><i title="Drag`n`Drop" class="icon-hand"></i></a></li> 
-							<li id="file"><a href="#"><i title="Attachment" class="icon-attachment"></i></a></li>
+							<li><a href="#"><i class="fas fa-paperclip"></i></a></li>
 						</ul>
 					</div>
 				</div>
