@@ -3432,6 +3432,9 @@ body > .jcf-select-drop.jcf-drop-flipped {
 	-webkit-transition: all .4s ease;
 	transition: all .4s ease;
 	z-index: 90;
+	padding: 10px 20px;
+	display: flex;
+	justify-content: flex-end;
 	overflow-y: auto;
 	overflow-x: hidden;
 	/*right: -70px;*/
@@ -3450,8 +3453,11 @@ body > .jcf-select-drop.jcf-drop-flipped {
 .user-option-list {
 	position: relative;
 	list-style: none;
-	padding: 0;
 	margin: 0;
+	left: 20%;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
 }
 
 .user-option-list li {
