@@ -5,6 +5,7 @@ window.addEventListener("load", () => {
         if (window.innerWidth < 1023) {
             document.querySelector("body").classList.add('menu-active')
             document.querySelector('.tour_hide').classList.add('tour_show')
+            document.querySelector('.user-header').querySelector('.menu').style.justifyContent = 'space-evenly'
         } else {
             document.querySelector('.tour_hide').classList.add('tour_show')
         }
@@ -15,6 +16,7 @@ function startTour() {
     if (window.innerWidth < 1023) {
         document.querySelector("body").classList.add('menu-active')
         document.querySelector('.tour_hide').classList.add('tour_show')
+        document.querySelector('.user-header').querySelector('.menu').style.justifyContent = 'space-evenly'
     } else {
         document.querySelector('.tour_hide').classList.add('tour_show')
     }
@@ -32,6 +34,7 @@ function finishTour() {
     document.querySelector('.menu').children[4].style.backgroundColor = 'unset'
     if (window.innerWidth < 1023) {
         document.querySelector('.user-header').style.position = 'fixed'
+        document.querySelector('.user-header').querySelector('.menu').style.justifyContent = 'flex-end'
     } else {
         document.querySelector('.user-header').style.position = 'relative'
     }
@@ -52,6 +55,10 @@ function backScreen() {
             document.querySelector('.menu').children[0].style.backgroundColor = 'white'
             document.querySelector('.menu').children[1].style.zIndex = 'unset'
             document.querySelector('.menu').children[1].style.backgroundColor = 'unset'
+            if (window.innerWidth < 1023) {
+                document.querySelector('.tour_window-right-block-chat').style.backgroundColor = 'unset'
+                document.querySelector('.tour_window-right-block-users').style.backgroundColor = 'rgba(0, 0, 0, 0.5)'
+            }
             document.querySelector('.back').style.display = 'none'
             break;
         case 2:
@@ -62,6 +69,10 @@ function backScreen() {
             document.querySelector('.menu').children[1].style.backgroundColor = 'white'
             document.querySelector('.menu').children[2].style.zIndex = 'unset'
             document.querySelector('.menu').children[2].style.backgroundColor = 'unset'
+            if (window.innerWidth < 1023) {
+                document.querySelector('.tour_window-right-block-users').style.backgroundColor = 'unset'
+                document.querySelector('.tour_window-right-block-settings').style.backgroundColor = 'rgba(0, 0, 0, 0.5)'
+            }
             break;
         case 3:
             document.querySelector('.tour_window-title').innerHTML = 'Settings'
@@ -71,6 +82,10 @@ function backScreen() {
             document.querySelector('.menu').children[2].style.backgroundColor = 'white'
             document.querySelector('.menu').children[3].style.zIndex = 'unset'
             document.querySelector('.menu').children[3].style.backgroundColor = 'unset'
+            if (window.innerWidth < 1023) {
+                document.querySelector('.tour_window-right-block-settings').style.backgroundColor = 'unset'
+                document.querySelector('.tour_window-right-block-share').style.backgroundColor = 'rgba(0, 0, 0, 0.5)'
+            }
             break;
         case 4:
             document.querySelector('.tour_window-title').innerHTML = 'Share Link'
@@ -83,6 +98,8 @@ function backScreen() {
 
             if (window.innerWidth < 1023) {
                 document.querySelector('.next').style.display = 'unset'
+                document.querySelector('.tour_window-right-block-share').style.backgroundColor = 'unset'
+                document.querySelector('.tour_window-right-block-url').style.backgroundColor = 'rgba(0, 0, 0, 0.5)'
             }
             break;
         case 5:
@@ -93,6 +110,9 @@ function backScreen() {
             document.querySelector('.menu').children[4].style.backgroundColor = 'white'
             document.querySelector('.menu-icon').style.zIndex = 'unset'
             document.querySelector('.menu-icon').style.backgroundColor = 'unset'
+            if (window.innerWidth < 1023) {
+                document.querySelector('.tour_window-right-block-url').style.backgroundColor = 'unset'
+            }
             break;
         case 6:
             document.querySelector('.tour_window-title').innerHTML = 'Tour button'
@@ -177,6 +197,9 @@ function nextScreen() {
                 ' the chat and texting with other participants of this session.'
             document.querySelector('.menu').children[0].style.zIndex = '1001'
             document.querySelector('.menu').children[0].style.backgroundColor = 'white'
+            if (window.innerWidth < 1023) {
+                document.querySelector('.tour_window-right-block-chat').style.backgroundColor = 'unset'
+            }
             break;
         case 2:
             document.querySelector('.tour_window-title').innerHTML = 'Users'
@@ -187,6 +210,10 @@ function nextScreen() {
             document.querySelector('.menu').children[1].style.zIndex = '1001'
             document.querySelector('.menu').children[1].style.backgroundColor = 'white'
             document.querySelector('.back').style.display = 'unset'
+            if (window.innerWidth < 1023) {
+                document.querySelector('.tour_window-right-block-users').style.backgroundColor = 'unset'
+                document.querySelector('.tour_window-right-block-chat').style.backgroundColor = 'rgba(0, 0, 0, 0.5)'
+            }
             break;
         case 3:
             document.querySelector('.tour_window-title').innerHTML = 'Settings'
@@ -196,6 +223,10 @@ function nextScreen() {
             document.querySelector('.menu').children[1].style.backgroundColor = 'unset'
             document.querySelector('.menu').children[2].style.zIndex = '1001'
             document.querySelector('.menu').children[2].style.backgroundColor = 'white'
+            if (window.innerWidth < 1023) {
+                document.querySelector('.tour_window-right-block-settings').style.backgroundColor = 'unset'
+                document.querySelector('.tour_window-right-block-users').style.backgroundColor = 'rgba(0, 0, 0, 0.5)'
+            }
             break;
         case 4:
             document.querySelector('.tour_window-title').innerHTML = 'Share Link'
@@ -205,6 +236,10 @@ function nextScreen() {
             document.querySelector('.menu').children[2].style.backgroundColor = 'unset'
             document.querySelector('.menu').children[3].style.zIndex = '1001'
             document.querySelector('.menu').children[3].style.backgroundColor = 'white'
+            if (window.innerWidth < 1023) {
+                document.querySelector('.tour_window-right-block-share').style.backgroundColor = 'unset'
+                document.querySelector('.tour_window-right-block-settings').style.backgroundColor = 'rgba(0, 0, 0, 0.5)'
+            }
             break;
         case 5:
             document.querySelector('.tour_window-title').innerHTML = 'New URL'
@@ -216,6 +251,8 @@ function nextScreen() {
             document.querySelector('.menu').children[4].style.backgroundColor = 'white'
             if (window.innerWidth < '1023') {
                 document.querySelector('.next').style.display = 'none'
+                document.querySelector('.tour_window-right-block-url').style.backgroundColor = 'unset'
+                document.querySelector('.tour_window-right-block-share').style.backgroundColor = 'rgba(0, 0, 0, 0.5)'
             }
             break;
         case 6:

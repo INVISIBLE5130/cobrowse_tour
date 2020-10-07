@@ -2814,6 +2814,30 @@ body > .jcf-select-drop.jcf-drop-flipped {
 		width: 90%;
 		height: auto;
 	}
+
+	.tour_window-left {
+		height: 88%;
+	}
+
+	.tour_window-bottom {
+		position: absolute;
+		top: 88%;
+		left: 0;
+		width: 100%;
+		height: inherit;
+		display: flex;
+	}
+
+	.tour_window-right-block-chat,
+	.tour_window-right-block-users,
+	.tour_window-right-block-settings,
+	.tour_window-right-block-share,
+	.tour_window-right-block-url,
+	.tour_window-right-block-logo {
+		width: 20%;
+		height: 12%;
+		background-color: rgba(0, 0, 0, 0.5);
+	}
 }
 
 .tour_window-title {
