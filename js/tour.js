@@ -178,9 +178,11 @@ function nextScreen() {
 
     switch (screen) {
         case 1:
-            if (window.innerWidth < 1023)
-            document.querySelector('.user-header').style.position = 'absolute'
-            document.querySelector('.user-header').style.zIndex = 'unset'
+            if (window.innerWidth < 1023) {
+                document.querySelector('.user-header').style.position = 'absolute'
+                document.querySelector('.user-header').style.bottom = '1%'
+                document.querySelector('.user-header').style.zIndex = 'unset'
+            }
             document.querySelector('.tour_window-title').innerHTML = 'Chat'
             document.querySelector('.tour_window-description').innerHTML = 'Clicking on this button you could open ' +
                 ' the chat and texting with other participants of this session.'
