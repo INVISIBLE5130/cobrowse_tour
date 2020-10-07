@@ -45,6 +45,24 @@
             </button>
         </div>
     </div>
+    <div class="tour_window-left" style="z-index: 999">
+    </div>
+    <div class="tour_window-right" style="z-index: 999">
+        <div class="tour_window-right-block-question">
+        </div>
+        <div class="tour_window-right-block-plus">
+        </div>
+        <div class="tour_window-right-block-minus">
+        </div>
+        <div class="tour_window-right-block-pencil">
+        </div>
+        <div class="tour_window-right-block-hand">
+        </div>
+        <div class="tour_window-right-block-clip">
+        </div>
+        <div class="tour_window-right-block-empty">
+        </div>
+    </div>
 </div>
 <div id="wrapper">
     <div class="user-wrapper">
@@ -161,26 +179,19 @@
             <span class="menu-icon">
 					<a href="#" onclick="startTour()" class="user-option-opener"><i class="icon-quesion"></i></a>
 				</span>
-            <!--				<div class="user-option-slide">-->
-            <!--					<div class="user-option-holder">-->
-            <!--						<ul class="user-option-list">-->
-            <!--							<li><a href="javascript:scale(1)"><i title="Zoom In" class="icon-searchplus"></i></a></li> -->
-            <!--							<li><a href="javascript:scale(-1)"><i title="Zoom Out" class="icon-searchminus"></i></a></li> -->
-            <!--							<li class="active" id="paintLi"><a href="javascript:paint()"><i title="Paint" class="icon-pencil"></i></a></li> -->
-            <!--							<li id="dragLi"><a href="javascript:drag()"><i title="Drag`n`Drop" class="icon-hand"></i></a></li> -->
-            <!--							<li><a href="#"><i class="icon-file"><img src="images/clip.png" alt="File"></i></a></li>-->
-            <!--						</ul>-->
-            <!--					</div>-->
-            <!--				</div>-->
             <div class="user-option-slide">
-                <ul class="user-option-list">
-                    <li><a href="javascript:scale(1)"><i title="Zoom In" class="icon-searchplus"></i></a></li>
-                    <li><a href="javascript:scale(-1)"><i title="Zoom Out" class="icon-searchminus"></i></a></li>
-                    <li class="active" id="paintLi"><a href="javascript:paint()"><i title="Paint"
-                                                                                    class="icon-pencil"></i></a></li>
-                    <li id="dragLi"><a href="javascript:drag()"><i title="Drag`n`Drop" class="icon-hand"></i></a></li>
-                    <li><a href="#"><i class="icon-file"><img src="images/clip.png" alt="File"></i></a></li>
-                </ul>
+                <div class="user-option-holder">
+                    <ul class="user-option-list">
+                        <li><a href="javascript:scale(1)"><i title="Zoom In" class="icon-searchplus"></i></a></li>
+                        <li><a href="javascript:scale(-1)"><i title="Zoom Out" class="icon-searchminus"></i></a></li>
+                        <li class="active" id="paintLi"><a href="javascript:paint()"><i title="Paint"
+                                                                                        class="icon-pencil"></i></a>
+                        </li>
+                        <li id="dragLi"><a href="javascript:drag()"><i title="Drag`n`Drop" class="icon-hand"></i></a>
+                        </li>
+                        <li><a href="#"><i class="icon-file"><img src="images/clip.png" alt="File"></i></a></li>
+                    </ul>
+                </div>
             </div>
             <strong class="mob-logo">
                 <a href="#" class="menu-opener">

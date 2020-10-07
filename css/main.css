@@ -2739,18 +2739,62 @@ body > .jcf-select-drop.jcf-drop-flipped {
 /*----------Tour----------*/
 
 .tour_hide {
-	width: 100%;
+	width: 96%;
 	height: 100vh;
 	display: none;
 	position: fixed;
 	align-items: center;
 	justify-content: center;
-	background: rgba(0, 0, 0, 0.5);
+	/*background: rgba(0, 0, 0, 0.5);*/
 	z-index: 1000;
 }
 
 .tour_show {
 	display: flex;
+}
+
+.tour_window-left {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: inherit;
+	display: flex;
+	background: rgba(0, 0, 0, 0.5);
+}
+
+.tour_window-right {
+	position: absolute;
+	top: 0;
+	right: -5%;
+	width: 5%;
+	height: inherit;
+	display: flex;
+	flex-direction: column;
+}
+
+.tour_window-right-block-question {
+	width: 100%;
+	height: 10%;
+	background: rgba(0, 0, 0, 0.5);
+}
+
+.tour_window-right-block-plus,
+.tour_window-right-block-minus,
+.tour_window-right-block-pencil,
+.tour_window-right-block-hand,
+.tour_window-right-block-clip {
+	width: 100%;
+	height: 7%;
+	background: rgba(0, 0, 0, 0.5);
+}
+
+.tour_window-right-block-empty {
+	position: relative;
+	bottom: 0;
+	width: 100%;
+	height: 55%;
+	background: rgba(0, 0, 0, 0.5);
 }
 
 .tour_window {
@@ -2762,6 +2806,7 @@ body > .jcf-select-drop.jcf-drop-flipped {
 	flex-direction: column;
 	justify-content: space-between;
 	box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.25);
+	z-index: 1000;
 }
 
 @media screen and (max-width: 1023px) {
@@ -2773,7 +2818,7 @@ body > .jcf-select-drop.jcf-drop-flipped {
 
 .tour_window-title {
 	font-size: 40px;
-	align-self: center;
+	text-align: center;
 }
 
 .tour_window-description {
@@ -3432,9 +3477,6 @@ body > .jcf-select-drop.jcf-drop-flipped {
 	-webkit-transition: all .4s ease;
 	transition: all .4s ease;
 	z-index: 90;
-	padding: 10px 20px;
-	display: flex;
-	justify-content: flex-end;
 	overflow-y: auto;
 	overflow-x: hidden;
 	/*right: -70px;*/
@@ -3447,17 +3489,14 @@ body > .jcf-select-drop.jcf-drop-flipped {
 
 .user-option-holder {
 	position: relative;
-	padding: 20px 10px;
+	padding: 15px;
 }
 
 .user-option-list {
 	position: relative;
 	list-style: none;
 	margin: 0;
-	left: 20%;
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
+	padding: 0;
 }
 
 .user-option-list li {
