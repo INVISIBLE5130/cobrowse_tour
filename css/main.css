@@ -2765,6 +2765,30 @@ body > .jcf-select-drop.jcf-drop-flipped {
 	justify-content: space-evenly;
 }
 
+.user-option-slide-hint {
+	position: absolute !important;
+	bottom: unset !important;
+	z-index: 1001 !important;
+	background: rgba(0, 0, 0, 0) !important;
+	border: 1px solid rgba(0, 0, 0, 0) !important;
+}
+
+.hint {
+	z-index: 1001 !important;
+	background-color: white !important;
+	width: max-content !important;
+}
+
+.icon_hint {
+	background: rgba(0, 0, 0, 0) !important;
+}
+
+.icon_hint_pencil {
+	color: #4d4d4e !important;
+	background: rgba(0, 0, 0, 0) !important;
+	box-shadow: rgba(0, 0, 0, 0.2) 0 1px 5px !important;
+}
+
 /*.tour_window-left {*/
 /*	position: absolute;*/
 /*	top: 0;*/
