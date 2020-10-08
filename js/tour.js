@@ -41,6 +41,7 @@ function finishTour() {
     document.querySelector('.user-option-list').children[4].querySelector('a').classList.remove('icon_hint')
     if (window.innerWidth < 1023) {
         document.querySelector('.user-header').classList.remove('header_hint')
+        document.querySelector('.user-header').style.position = 'fixed'
     } else {
         document.querySelector('.user-header').style.position = 'relative'
     }
