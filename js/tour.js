@@ -9,6 +9,7 @@ window.addEventListener("load", () => {
             document.querySelector('.tour_hide').classList.add('tour_show')
             document.querySelector('.active').querySelector('a').classList.add('icon_hint_pencil')
         }
+        nextScreen()
     }
 })
 
@@ -51,6 +52,14 @@ function backScreen() {
 
     switch (screen) {
         case 1:
+            document.querySelector('.tour_window-title').innerHTML = 'Tour'
+            document.querySelector('.tour_window-description').innerHTML = 'This is tour was created to show you' +
+                ' how to work with our tool. If you want to start click "Next" else click "Finish".'
+            document.querySelector('.menu').children[0].style.zIndex = 'unset'
+            document.querySelector('.menu').children[0].style.backgroundColor = 'unset'
+            document.querySelector('.back').style.display = 'none'
+            break;
+        case 2:
             document.querySelector('.tour_window-title').innerHTML = 'Chat'
             document.querySelector('.tour_window-description').innerHTML = 'Clicking on this button you could open ' +
                 ' the chat and texting with other participants of this session.'
@@ -58,9 +67,8 @@ function backScreen() {
             document.querySelector('.menu').children[0].style.backgroundColor = 'white'
             document.querySelector('.menu').children[1].style.zIndex = 'unset'
             document.querySelector('.menu').children[1].style.backgroundColor = 'unset'
-            document.querySelector('.back').style.display = 'none'
             break;
-        case 2:
+        case 3:
             document.querySelector('.tour_window-title').innerHTML = 'Users'
             document.querySelector('.tour_window-description').innerHTML = 'Clicking on this button you could make' +
                 ' a conference, broadcast or private call.'
@@ -69,7 +77,7 @@ function backScreen() {
             document.querySelector('.menu').children[2].style.zIndex = 'unset'
             document.querySelector('.menu').children[2].style.backgroundColor = 'unset'
             break;
-        case 3:
+        case 4:
             document.querySelector('.tour_window-title').innerHTML = 'Settings'
             document.querySelector('.tour_window-description').innerHTML = 'Clicking on this button you could set' +
                 ' or change your username, change audio device and toggle simulation "Mobile / Desktop".'
@@ -78,7 +86,7 @@ function backScreen() {
             document.querySelector('.menu').children[3].style.zIndex = 'unset'
             document.querySelector('.menu').children[3].style.backgroundColor = 'unset'
             break;
-        case 4:
+        case 5:
             document.querySelector('.tour_window-title').innerHTML = 'Share Link'
             document.querySelector('.tour_window-description').innerHTML = 'Clicking on this button you could copy' +
                 ' the url and share it with other people.'
@@ -91,7 +99,7 @@ function backScreen() {
                 document.querySelector('.next').style.display = 'unset'
             }
             break;
-        case 5:
+        case 6:
             document.querySelector('.tour_window-title').innerHTML = 'New URL'
             document.querySelector('.tour_window-description').innerHTML = 'Clicking on this button you could type' +
                 ' a new url and change the presentation web page.'
@@ -100,7 +108,7 @@ function backScreen() {
             document.querySelector('.menu-icon').style.zIndex = 'unset'
             document.querySelector('.menu-icon').style.backgroundColor = 'unset'
             break;
-        case 6:
+        case 7:
             document.querySelector('.user-option-slide').classList.remove('user-option-slide-hint')
 
             document.querySelector('.tour_window-title').innerHTML = 'Tour button'
@@ -110,7 +118,7 @@ function backScreen() {
             document.querySelector('.menu-icon').style.backgroundColor = 'white'
             document.querySelector('.user-option-list').children[0].classList.remove('hint')
             break;
-        case 7:
+        case 8:
             document.querySelector('.tour_window-title').innerHTML = 'Plus scope'
             document.querySelector('.tour_window-description').innerHTML = 'Clicking on this button you could change' +
                 ' scope to plus.'
@@ -121,7 +129,7 @@ function backScreen() {
             document.querySelector('.user-option-list').children[3].querySelector('a').classList.add('icon_hint')
             document.querySelector('.user-option-list').children[4].querySelector('a').classList.add('icon_hint')
             break;
-        case 8:
+        case 9:
             document.querySelector('.tour_window-title').innerHTML = 'Minus scope'
             document.querySelector('.tour_window-description').innerHTML = 'Clicking on this button you could change' +
                 ' scope to minus.'
@@ -132,7 +140,7 @@ function backScreen() {
             document.querySelector('.user-option-list').children[3].querySelector('a').classList.add('icon_hint')
             document.querySelector('.user-option-list').children[4].querySelector('a').classList.add('icon_hint')
             break;
-        case 9:
+        case 10:
             document.querySelector('.tour_window-title').innerHTML = 'Pencil'
             document.querySelector('.tour_window-description').innerHTML = 'Clicking on this button you could draw' +
                 ' anything over the screen or if you use tool on mobile device you could touch and hold your screen to activate it.'
@@ -143,7 +151,7 @@ function backScreen() {
             document.querySelector('.user-option-list').children[3].querySelector('a').classList.add('icon_hint')
             document.querySelector('.user-option-list').children[4].querySelector('a').classList.add('icon_hint')
             break;
-        case 10:
+        case 11:
             document.querySelector('.tour_window-title').innerHTML = 'Drag'
             document.querySelector('.tour_window-description').innerHTML = 'Clicking on this button you could move' +
                 ' the screen of presentation page.'
@@ -164,16 +172,21 @@ function nextScreen() {
 
     switch (screen) {
         case 1:
-            if (window.innerWidth < 1023)
-                document.querySelector('.user-header').style.position = 'absolute'
-            document.querySelector('.user-header').style.zIndex = 'unset'
+            document.querySelector('.tour_window-title').innerHTML = 'Tour'
+            document.querySelector('.tour_window-description').innerHTML = 'This is tour was created to show you' +
+                ' how to work with our tool. If you want to start click "Next" else click "Finish".'
+            document.querySelector('.menu').children[0].style.zIndex = 'unset'
+            document.querySelector('.menu').children[0].style.backgroundColor = 'unset'
+            break;
+        case 2:
             document.querySelector('.tour_window-title').innerHTML = 'Chat'
             document.querySelector('.tour_window-description').innerHTML = 'Clicking on this button you could open ' +
                 ' the chat and texting with other participants of this session.'
             document.querySelector('.menu').children[0].style.zIndex = '1001'
             document.querySelector('.menu').children[0].style.backgroundColor = 'white'
+            document.querySelector('.back').style.display = 'unset'
             break;
-        case 2:
+        case 3:
             document.querySelector('.tour_window-title').innerHTML = 'Users'
             document.querySelector('.tour_window-description').innerHTML = 'Clicking on this button you could make' +
                 ' a conference, broadcast or private call.'
@@ -181,9 +194,8 @@ function nextScreen() {
             document.querySelector('.menu').children[0].style.backgroundColor = 'unset'
             document.querySelector('.menu').children[1].style.zIndex = '1001'
             document.querySelector('.menu').children[1].style.backgroundColor = 'white'
-            document.querySelector('.back').style.display = 'unset'
             break;
-        case 3:
+        case 4:
             document.querySelector('.tour_window-title').innerHTML = 'Settings'
             document.querySelector('.tour_window-description').innerHTML = 'Clicking on this button you could set' +
                 ' or change your username, change audio device and toggle simulation "Mobile / Desktop".'
@@ -192,7 +204,7 @@ function nextScreen() {
             document.querySelector('.menu').children[2].style.zIndex = '1001'
             document.querySelector('.menu').children[2].style.backgroundColor = 'white'
             break;
-        case 4:
+        case 5:
             document.querySelector('.tour_window-title').innerHTML = 'Share Link'
             document.querySelector('.tour_window-description').innerHTML = 'Clicking on this button you could copy' +
                 ' the url and share it with other people.'
@@ -201,7 +213,7 @@ function nextScreen() {
             document.querySelector('.menu').children[3].style.zIndex = '1001'
             document.querySelector('.menu').children[3].style.backgroundColor = 'white'
             break;
-        case 5:
+        case 6:
             document.querySelector('.tour_window-title').innerHTML = 'New URL'
             document.querySelector('.tour_window-description').innerHTML = 'Clicking on this button you could type' +
                 ' a new url and change the presentation web page.'
@@ -213,7 +225,7 @@ function nextScreen() {
                 document.querySelector('.next').style.display = 'none'
             }
             break;
-        case 6:
+        case 7:
             document.querySelector('.tour_window-title').innerHTML = 'Tour button'
             document.querySelector('.tour_window-description').innerHTML = 'Clicking on this button you could start' +
                 ' this tour again.'
@@ -222,7 +234,7 @@ function nextScreen() {
             document.querySelector('.menu-icon').style.zIndex = '1001'
             document.querySelector('.menu-icon').style.backgroundColor = 'white'
             break;
-        case 7:
+        case 8:
             document.querySelector('.user-option-slide').classList.add('user-option-slide-hint')
             document.querySelector('.active').querySelector('a').style.color = 'unset'
 
@@ -238,7 +250,7 @@ function nextScreen() {
             document.querySelector('.user-option-list').children[4].querySelector('a').classList.add('icon_hint')
 
             break;
-        case 8:
+        case 9:
             document.querySelector('.tour_window-title').innerHTML = 'Minus scope'
             document.querySelector('.tour_window-description').innerHTML = 'Clicking on this button you could change' +
                 ' scope to minus.'
@@ -249,7 +261,7 @@ function nextScreen() {
             document.querySelector('.user-option-list').children[3].querySelector('a').classList.add('icon_hint')
             document.querySelector('.user-option-list').children[4].querySelector('a').classList.add('icon_hint')
             break;
-        case 9:
+        case 10:
             document.querySelector('.tour_window-title').innerHTML = 'Pencil'
             document.querySelector('.tour_window-description').innerHTML = 'Clicking on this button you could draw' +
                 ' anything over the screen or if you use tool on mobile device you could touch and hold your screen to activate it.'
@@ -260,7 +272,7 @@ function nextScreen() {
             document.querySelector('.user-option-list').children[3].querySelector('a').classList.add('icon_hint')
             document.querySelector('.user-option-list').children[4].querySelector('a').classList.add('icon_hint')
             break;
-        case 10:
+        case 11:
             document.querySelector('.tour_window-title').innerHTML = 'Drag'
             document.querySelector('.tour_window-description').innerHTML = 'Clicking on this button you could move' +
                 ' the screen of presentation page.'
@@ -271,7 +283,7 @@ function nextScreen() {
             document.querySelector('.user-option-list').children[2].querySelector('a').classList.add('icon_hint')
             document.querySelector('.user-option-list').children[4].querySelector('a').classList.add('icon_hint')
             break;
-        case 11:
+        case 12:
             document.querySelector('.tour_window-title').innerHTML = 'File'
             document.querySelector('.tour_window-description').innerHTML = 'Clicking on this button you could ' +
                 ' drag & drop your files to the presentation and show it.'
