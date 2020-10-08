@@ -10,7 +10,7 @@ window.addEventListener("load", () => {
             document.querySelector('.tour_hide').classList.add('tour_show')
             document.querySelector('.active').querySelector('a').classList.add('icon_hint_pencil')
         }
-        nextScreen()
+        nextScreen("Tour")
     }
 })
 
@@ -21,7 +21,7 @@ function startTour() {
     } else {
         document.querySelector('.tour_hide').classList.add('tour_show')
     }
-    backScreen("Tour")
+    nextScreen("Tour")
 }
 
 function finishTour() {
@@ -45,17 +45,13 @@ function finishTour() {
         document.querySelector('.user-header').style.position = 'relative'
     }
     localStorage.setItem('tour', 'finished')
-    backScreen("Tour")
+    nextScreen("Tour")
 }
 
 let screen = 0
 
-function backScreen(tour) {
-    if (tour === "Tour") {
-        screen = 1
-    } else {
-        screen -= 1
-    }
+function backScreen() {
+    screen -= 1
 
     switch (screen) {
         case 1:
@@ -236,8 +232,12 @@ function backScreen(tour) {
     }
 }
 
-function nextScreen() {
-    screen += 1
+function nextScreen(tour) {
+    if (tour === "Tour") {
+        screen = 1
+    } else {
+        screen += 1
+    }
 
     switch (screen) {
         case 1:
@@ -246,6 +246,7 @@ function nextScreen() {
                 ' how to work with our tool. If you want to start click "Next" else click "Finish".'
             document.querySelector('.menu').children[0].style.zIndex = 'unset'
             document.querySelector('.menu').children[0].style.backgroundColor = 'unset'
+            document.querySelector('.back').style.display = 'none'
             break;
         case 2:
             document.querySelector('.tour_window-title').innerHTML = 'Chat'
