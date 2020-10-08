@@ -10,7 +10,7 @@ window.addEventListener("load", () => {
             document.querySelector('.tour_hide').classList.add('tour_show')
             document.querySelector('.active').querySelector('a').classList.add('icon_hint_pencil')
         }
-        nextScreen("Tour")
+        backScreen("Tour")
     }
 })
 
@@ -21,7 +21,7 @@ function startTour() {
     } else {
         document.querySelector('.tour_hide').classList.add('tour_show')
     }
-    nextScreen("Tour")
+    backScreen("Tour")
 }
 
 function finishTour() {
@@ -46,13 +46,16 @@ function finishTour() {
         document.querySelector('.user-header').style.position = 'relative'
     }
     localStorage.setItem('tour', 'finished')
-    location.reload()
 }
 
 let screen = 0
 
-function backScreen() {
-    screen -= 1
+function backScreen(tour) {
+    if (tour === "Tour") {
+        screen = 1
+    } else {
+        screen -= 1
+    }
 
     switch (screen) {
         case 1:
@@ -233,12 +236,8 @@ function backScreen() {
     }
 }
 
-function nextScreen(tour) {
-    if (tour === "Tour") {
-        screen = 1
-    } else {
-        screen += 1
-    }
+function nextScreen() {
+    screen += 1
 
     switch (screen) {
         case 1:
