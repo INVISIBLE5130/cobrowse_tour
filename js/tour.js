@@ -45,7 +45,7 @@ function finishTour() {
         document.querySelector('.user-header').style.position = 'relative'
     }
     localStorage.setItem('tour', 'finished')
-    nextScreen("Tour")
+    location.reload()
 }
 
 let screen = 0
