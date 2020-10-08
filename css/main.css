@@ -2778,6 +2778,21 @@ body > .jcf-select-drop.jcf-drop-flipped {
 	width: max-content !important;
 }
 
+.header_hint {
+	z-index: 1001 !important;
+	width: max-content !important;
+	background: rgba(0, 0, 0, 0) !important;
+}
+
+.menu_item_hint {
+	box-shadow: unset !important;
+	background: rgba(0, 0, 0, 0) !important;
+}
+
+.menu_item_icon_hint {
+	color: rgba(0, 0, 0, 0) !important;
+}
+
 .icon_hint {
 	background: rgba(0, 0, 0, 0) !important;
 }

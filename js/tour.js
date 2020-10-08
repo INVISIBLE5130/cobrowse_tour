@@ -5,6 +5,7 @@ window.addEventListener("load", () => {
         if (window.innerWidth < 1023) {
             document.querySelector("body").classList.add('menu-active')
             document.querySelector('.tour_hide').classList.add('tour_show')
+            document.querySelector('.user-header').classList.add('header_hint')
         } else {
             document.querySelector('.tour_hide').classList.add('tour_show')
             document.querySelector('.active').querySelector('a').classList.add('icon_hint_pencil')
@@ -38,7 +39,7 @@ function finishTour() {
     document.querySelector('.user-option-list').children[3].querySelector('a').classList.remove('icon_hint')
     document.querySelector('.user-option-list').children[4].querySelector('a').classList.remove('icon_hint')
     if (window.innerWidth < 1023) {
-        document.querySelector('.user-header').style.position = 'fixed'
+        document.querySelector('.user-header').classList.remove('header_hint')
     } else {
         document.querySelector('.user-header').style.position = 'relative'
     }
@@ -57,6 +58,17 @@ function backScreen() {
                 ' how to work with our tool. If you want to start click "Next" else click "Finish".'
             document.querySelector('.menu').children[0].style.zIndex = 'unset'
             document.querySelector('.menu').children[0].style.backgroundColor = 'unset'
+            document.querySelector('.menu').children[0].querySelector('a').classList.remove('menu_item_hint')
+            document.querySelector('.menu').children[1].querySelector('a').classList.remove('menu_item_hint')
+            document.querySelector('.menu').children[2].querySelector('a').classList.remove('menu_item_hint')
+            document.querySelector('.menu').children[3].querySelector('a').classList.remove('menu_item_hint')
+            document.querySelector('.menu').children[4].querySelector('a').classList.remove('menu_item_hint')
+            document.querySelector('.icon-chat').classList.remove('menu_item_icon_hint')
+            document.querySelector('.icon-user').classList.remove('menu_item_icon_hint')
+            document.querySelector('#usercount').style.display = 'unset'
+            document.querySelector('.icon-setting').classList.remove('menu_item_icon_hint')
+            document.querySelector('.icon-share').classList.remove('menu_item_icon_hint')
+            document.querySelector('.icon-url').classList.remove('menu_item_icon_hint')
             document.querySelector('.back').style.display = 'none'
             break;
         case 2:
@@ -67,6 +79,17 @@ function backScreen() {
             document.querySelector('.menu').children[0].style.backgroundColor = 'white'
             document.querySelector('.menu').children[1].style.zIndex = 'unset'
             document.querySelector('.menu').children[1].style.backgroundColor = 'unset'
+            document.querySelector('.menu').children[0].querySelector('a').classList.remove('menu_item_hint')
+            document.querySelector('.menu').children[1].querySelector('a').classList.add('menu_item_hint')
+            document.querySelector('.menu').children[2].querySelector('a').classList.add('menu_item_hint')
+            document.querySelector('.menu').children[3].querySelector('a').classList.add('menu_item_hint')
+            document.querySelector('.menu').children[4].querySelector('a').classList.add('menu_item_hint')
+            document.querySelector('.icon-chat').classList.remove('menu_item_icon_hint')
+            document.querySelector('.icon-user').classList.add('menu_item_icon_hint')
+            document.querySelector('#usercount').style.display = 'none'
+            document.querySelector('.icon-setting').classList.add('menu_item_icon_hint')
+            document.querySelector('.icon-share').classList.add('menu_item_icon_hint')
+            document.querySelector('.icon-url').classList.add('menu_item_icon_hint')
             break;
         case 3:
             document.querySelector('.tour_window-title').innerHTML = 'Users'
@@ -76,6 +99,14 @@ function backScreen() {
             document.querySelector('.menu').children[1].style.backgroundColor = 'white'
             document.querySelector('.menu').children[2].style.zIndex = 'unset'
             document.querySelector('.menu').children[2].style.backgroundColor = 'unset'
+            document.querySelector('.menu').children[1].querySelector('a').classList.remove('menu_item_hint')
+            document.querySelector('.menu').children[2].querySelector('a').classList.add('menu_item_hint')
+            document.querySelector('.icon-chat').classList.add('menu_item_icon_hint')
+            document.querySelector('.icon-user').classList.remove('menu_item_icon_hint')
+            document.querySelector('#usercount').style.display = 'unset'
+            document.querySelector('.icon-setting').classList.add('menu_item_icon_hint')
+            document.querySelector('.icon-share').classList.add('menu_item_icon_hint')
+            document.querySelector('.icon-url').classList.add('menu_item_icon_hint')
             break;
         case 4:
             document.querySelector('.tour_window-title').innerHTML = 'Settings'
@@ -85,6 +116,14 @@ function backScreen() {
             document.querySelector('.menu').children[2].style.backgroundColor = 'white'
             document.querySelector('.menu').children[3].style.zIndex = 'unset'
             document.querySelector('.menu').children[3].style.backgroundColor = 'unset'
+            document.querySelector('.menu').children[2].querySelector('a').classList.remove('menu_item_hint')
+            document.querySelector('.menu').children[3].querySelector('a').classList.add('menu_item_hint')
+            document.querySelector('.icon-chat').classList.add('menu_item_icon_hint')
+            document.querySelector('.icon-user').classList.add('menu_item_icon_hint')
+            document.querySelector('#usercount').style.display = 'none'
+            document.querySelector('.icon-setting').classList.remove('menu_item_icon_hint')
+            document.querySelector('.icon-share').classList.add('menu_item_icon_hint')
+            document.querySelector('.icon-url').classList.add('menu_item_icon_hint')
             break;
         case 5:
             document.querySelector('.tour_window-title').innerHTML = 'Share Link'
@@ -94,6 +133,14 @@ function backScreen() {
             document.querySelector('.menu').children[3].style.backgroundColor = 'white'
             document.querySelector('.menu').children[4].style.zIndex = 'unset'
             document.querySelector('.menu').children[4].style.backgroundColor = 'unset'
+            document.querySelector('.menu').children[3].querySelector('a').classList.remove('menu_item_hint')
+            document.querySelector('.menu').children[4].querySelector('a').classList.add('menu_item_hint')
+            document.querySelector('.icon-chat').classList.add('menu_item_icon_hint')
+            document.querySelector('.icon-user').classList.add('menu_item_icon_hint')
+            document.querySelector('#usercount').style.display = 'none'
+            document.querySelector('.icon-setting').classList.add('menu_item_icon_hint')
+            document.querySelector('.icon-share').classList.remove('menu_item_icon_hint')
+            document.querySelector('.icon-url').classList.add('menu_item_icon_hint')
 
             if (window.innerWidth < 1023) {
                 document.querySelector('.next').style.display = 'unset'
@@ -107,6 +154,13 @@ function backScreen() {
             document.querySelector('.menu').children[4].style.backgroundColor = 'white'
             document.querySelector('.menu-icon').style.zIndex = 'unset'
             document.querySelector('.menu-icon').style.backgroundColor = 'unset'
+            document.querySelector('.menu').children[4].querySelector('a').classList.remove('menu_item_hint')
+            document.querySelector('.icon-chat').classList.add('menu_item_icon_hint')
+            document.querySelector('.icon-user').classList.add('menu_item_icon_hint')
+            document.querySelector('#usercount').style.display = 'none'
+            document.querySelector('.icon-setting').classList.add('menu_item_icon_hint')
+            document.querySelector('.icon-share').classList.add('menu_item_icon_hint')
+            document.querySelector('.icon-url').classList.remove('menu_item_icon_hint')
             break;
         case 7:
             document.querySelector('.user-option-slide').classList.remove('user-option-slide-hint')
@@ -184,6 +238,17 @@ function nextScreen() {
                 ' the chat and texting with other participants of this session.'
             document.querySelector('.menu').children[0].style.zIndex = '1001'
             document.querySelector('.menu').children[0].style.backgroundColor = 'white'
+            document.querySelector('.menu').children[0].querySelector('a').classList.remove('menu_item_hint')
+            document.querySelector('.menu').children[1].querySelector('a').classList.add('menu_item_hint')
+            document.querySelector('.menu').children[2].querySelector('a').classList.add('menu_item_hint')
+            document.querySelector('.menu').children[3].querySelector('a').classList.add('menu_item_hint')
+            document.querySelector('.menu').children[4].querySelector('a').classList.add('menu_item_hint')
+            document.querySelector('.icon-chat').classList.remove('menu_item_icon_hint')
+            document.querySelector('.icon-user').classList.add('menu_item_icon_hint')
+            document.querySelector('#usercount').style.display = 'none'
+            document.querySelector('.icon-setting').classList.add('menu_item_icon_hint')
+            document.querySelector('.icon-share').classList.add('menu_item_icon_hint')
+            document.querySelector('.icon-url').classList.add('menu_item_icon_hint')
             document.querySelector('.back').style.display = 'unset'
             break;
         case 3:
@@ -194,6 +259,14 @@ function nextScreen() {
             document.querySelector('.menu').children[0].style.backgroundColor = 'unset'
             document.querySelector('.menu').children[1].style.zIndex = '1001'
             document.querySelector('.menu').children[1].style.backgroundColor = 'white'
+            document.querySelector('.menu').children[0].querySelector('a').classList.add('menu_item_hint')
+            document.querySelector('.menu').children[1].querySelector('a').classList.remove('menu_item_hint')
+            document.querySelector('.icon-chat').classList.add('menu_item_icon_hint')
+            document.querySelector('.icon-user').classList.remove('menu_item_icon_hint')
+            document.querySelector('#usercount').style.display = 'unset'
+            document.querySelector('.icon-setting').classList.add('menu_item_icon_hint')
+            document.querySelector('.icon-share').classList.add('menu_item_icon_hint')
+            document.querySelector('.icon-url').classList.add('menu_item_icon_hint')
             break;
         case 4:
             document.querySelector('.tour_window-title').innerHTML = 'Settings'
@@ -203,6 +276,14 @@ function nextScreen() {
             document.querySelector('.menu').children[1].style.backgroundColor = 'unset'
             document.querySelector('.menu').children[2].style.zIndex = '1001'
             document.querySelector('.menu').children[2].style.backgroundColor = 'white'
+            document.querySelector('.menu').children[1].querySelector('a').classList.add('menu_item_hint')
+            document.querySelector('.menu').children[2].querySelector('a').classList.remove('menu_item_hint')
+            document.querySelector('.icon-chat').classList.add('menu_item_icon_hint')
+            document.querySelector('.icon-user').classList.add('menu_item_icon_hint')
+            document.querySelector('#usercount').style.display = 'none'
+            document.querySelector('.icon-setting').classList.remove('menu_item_icon_hint')
+            document.querySelector('.icon-share').classList.add('menu_item_icon_hint')
+            document.querySelector('.icon-url').classList.add('menu_item_icon_hint')
             break;
         case 5:
             document.querySelector('.tour_window-title').innerHTML = 'Share Link'
@@ -212,6 +293,14 @@ function nextScreen() {
             document.querySelector('.menu').children[2].style.backgroundColor = 'unset'
             document.querySelector('.menu').children[3].style.zIndex = '1001'
             document.querySelector('.menu').children[3].style.backgroundColor = 'white'
+            document.querySelector('.menu').children[2].querySelector('a').classList.add('menu_item_hint')
+            document.querySelector('.menu').children[3].querySelector('a').classList.remove('menu_item_hint')
+            document.querySelector('.icon-chat').classList.add('menu_item_icon_hint')
+            document.querySelector('.icon-user').classList.add('menu_item_icon_hint')
+            document.querySelector('#usercount').style.display = 'none'
+            document.querySelector('.icon-setting').classList.add('menu_item_icon_hint')
+            document.querySelector('.icon-share').classList.remove('menu_item_icon_hint')
+            document.querySelector('.icon-url').classList.add('menu_item_icon_hint')
             break;
         case 6:
             document.querySelector('.tour_window-title').innerHTML = 'New URL'
@@ -221,6 +310,14 @@ function nextScreen() {
             document.querySelector('.menu').children[3].style.backgroundColor = 'unset'
             document.querySelector('.menu').children[4].style.zIndex = '1001'
             document.querySelector('.menu').children[4].style.backgroundColor = 'white'
+            document.querySelector('.menu').children[3].querySelector('a').classList.add('menu_item_hint')
+            document.querySelector('.menu').children[4].querySelector('a').classList.remove('menu_item_hint')
+            document.querySelector('.icon-chat').classList.add('menu_item_icon_hint')
+            document.querySelector('.icon-user').classList.add('menu_item_icon_hint')
+            document.querySelector('#usercount').style.display = 'none'
+            document.querySelector('.icon-setting').classList.add('menu_item_icon_hint')
+            document.querySelector('.icon-share').classList.add('menu_item_icon_hint')
+            document.querySelector('.icon-url').classList.remove('menu_item_icon_hint')
             if (window.innerWidth < '1023') {
                 document.querySelector('.next').style.display = 'none'
             }
@@ -248,7 +345,6 @@ function nextScreen() {
             document.querySelector('.user-option-list').children[2].querySelector('a').classList.add('icon_hint')
             document.querySelector('.user-option-list').children[3].querySelector('a').classList.add('icon_hint')
             document.querySelector('.user-option-list').children[4].querySelector('a').classList.add('icon_hint')
-
             break;
         case 9:
             document.querySelector('.tour_window-title').innerHTML = 'Minus scope'
