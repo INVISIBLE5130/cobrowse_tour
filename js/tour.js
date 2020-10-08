@@ -39,6 +39,11 @@ function finishTour() {
     document.querySelector('.user-option-list').children[2].querySelector('a').classList.remove('icon_hint')
     document.querySelector('.user-option-list').children[3].querySelector('a').classList.remove('icon_hint')
     document.querySelector('.user-option-list').children[4].querySelector('a').classList.remove('icon_hint')
+    document.querySelector('.user-option-list').children[0].classList.remove('hint')
+    document.querySelector('.user-option-list').children[1].classList.remove('hint')
+    document.querySelector('.user-option-list').children[2].classList.remove('hint')
+    document.querySelector('.user-option-list').children[3].classList.remove('hint')
+    document.querySelector('.user-option-list').children[4].classList.remove('hint')
     if (window.innerWidth < 1023) {
         document.querySelector('.icon-chat').classList.remove('menu_item_icon_hint')
         document.querySelector('.icon-user').classList.remove('menu_item_icon_hint')
