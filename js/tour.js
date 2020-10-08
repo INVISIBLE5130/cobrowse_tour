@@ -21,6 +21,12 @@ function startTour() {
     } else {
         document.querySelector('.tour_hide').classList.add('tour_show')
     }
+
+    for (let i = 0; i <= screen; i++) {
+        if (i <= screen) {
+            backScreen()
+        }
+    }
 }
 
 function finishTour() {
