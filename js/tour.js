@@ -78,6 +78,7 @@ function backScreen(tour) {
                 document.querySelector('.icon-url').classList.remove('menu_item_icon_hint')
             }
             document.querySelector('.back').style.display = 'none'
+            document.querySelector('.next').style.display = 'unset'
             break;
         case 2:
             document.querySelector('.tour_window-title').innerHTML = 'Chat'
