@@ -34,6 +34,17 @@ function finishTour() {
     document.querySelector('.menu').children[4].style.backgroundColor = 'unset'
     document.querySelector('.active').querySelector('a').classList.remove('icon_hint_pencil')
     document.querySelector('.active').querySelector('a').classList.remove('icon_hint')
+    document.querySelector('.icon-chat').classList.remove('menu_item_icon_hint')
+    document.querySelector('.icon-user').classList.remove('menu_item_icon_hint')
+    document.querySelector('#usercount').style.display = 'unset'
+    document.querySelector('.icon-setting').classList.remove('menu_item_icon_hint')
+    document.querySelector('.icon-share').classList.remove('menu_item_icon_hint')
+    document.querySelector('.icon-url').classList.remove('menu_item_icon_hint')
+    document.querySelector('.menu').children[0].querySelector('a').classList.remove('menu_item_hint')
+    document.querySelector('.menu').children[1].querySelector('a').classList.remove('menu_item_hint')
+    document.querySelector('.menu').children[2].querySelector('a').classList.remove('menu_item_hint')
+    document.querySelector('.menu').children[3].querySelector('a').classList.remove('menu_item_hint')
+    document.querySelector('.menu').children[4].querySelector('a').classList.remove('menu_item_hint')
     document.querySelector('.user-option-list').children[0].querySelector('a').classList.remove('icon_hint')
     document.querySelector('.user-option-list').children[1].querySelector('a').classList.remove('icon_hint')
     document.querySelector('.user-option-list').children[2].querySelector('a').classList.remove('icon_hint')
